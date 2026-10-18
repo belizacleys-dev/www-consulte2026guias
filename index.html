@@ -1,85 +1,1174 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leonel Acadêmica</title>
+
+  <meta name="theme-color" content="#17251f">
+  <meta name="description" content="Leonel Acadêmica — livros, papelaria, fotocópias e suprimentos de informática em Teresina - PI.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Leonel Acadêmica | Livraria e Papelaria">
+  <meta property="og:description" content="Conheça a empresa, seus serviços e canais oficiais de atendimento.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <title>Leonel Acadêmica | Livraria e Papelaria</title>
+
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#f9fafb; color:#111; }
-    header { padding:30px; text-align:center; background:#1e293b; color:#fff; }
-    header h1 { margin:0; font-size:2.5em; }
-    header p { font-size:1.2em; margin-top:10px; }
+    :root {
+      --ink: #17251f;
+      --muted: #68736e;
+      --paper: #f7f5ef;
+      --line: #dfe3dc;
+      --green: #3e604d;
+      --mint: #d9e4d6;
+      --light-green: #e9eee7;
+      --white: #ffffff;
+    }
 
-    .services { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; padding:20px; background:#111827; }
-    .service-box { background:#374151; padding:12px 20px; border-radius:8px; color:#fff; font-size:14px; }
+    * {
+      box-sizing: border-box;
+    }
 
-    .container { padding:40px; max-width:900px; margin:auto; }
-    .card { background:#fff; padding:25px; margin-bottom:20px; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,0.1); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .cta { text-align:center; margin-top:30px; }
-    .cta button { background:#22c55e; color:#111; padding:15px 30px; border:none; border-radius:8px; font-size:18px; cursor:pointer; }
-    .cta button:hover { background:#16a34a; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
 
-    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25d366; color:#fff; padding:15px 20px; border-radius:50px; font-size:16px; text-decoration:none; box-shadow:0 0 15px rgba(0,0,0,0.4); }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    footer { text-align:center; padding:20px; font-size:14px; color:#6b7280; }
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 56px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #e8eee5;
+      color: #50634f;
+      text-align: center;
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+
+    .topbar a {
+      margin-left: 18px;
+      font-weight: 700;
+    }
+
+    .header {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(23, 37, 31, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 239, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: #fff;
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .brand strong,
+    .brand small {
+      display: block;
+    }
+
+    .brand strong {
+      font: 800 17px Manrope, sans-serif;
+      letter-spacing: -0.05em;
+    }
+
+    .brand small {
+      color: #718079;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      color: #59665f;
+      font-size: 13px;
+    }
+
+    .navigation a:hover {
+      color: var(--ink);
+    }
+
+    .navigation .navigation-button {
+      background: var(--ink);
+      color: #fff;
+      border-radius: 22px;
+      padding: 12px 17px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      padding-top: 91px;
+      padding-bottom: 105px;
+    }
+
+    .eyebrow {
+      margin: 0 0 23px;
+      color: #58745e;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 1px;
+      margin-right: 9px;
+      background: #779477;
+      vertical-align: middle;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Manrope, sans-serif;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin: 0;
+      font: 800 clamp(42px, 5vw, 70px)/1.03 Manrope, sans-serif;
+      letter-spacing: -0.07em;
+    }
+
+    .hero h1 em {
+      color: #58745e;
+      font-style: normal;
+    }
+
+    .hero-description {
+      max-width: 505px;
+      margin: 26px 0 30px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .primary-button {
+      display: inline-block;
+      border: 0;
+      border-radius: 4px;
+      padding: 15px 19px;
+      background: var(--ink);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .primary-button:hover {
+      background: #2f493b;
+    }
+
+    .secondary-link {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-facts {
+      display: flex;
+      gap: 42px;
+      margin-top: 70px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-facts strong,
+    .hero-facts span {
+      display: block;
+    }
+
+    .hero-facts strong {
+      font: 700 21px Manrope, sans-serif;
+    }
+
+    .hero-facts span {
+      margin-top: 4px;
+      color: #7b8580;
+      font-size: 10px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .hero-image {
+      min-height: 505px;
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 71%;
+      height: 72%;
+      background: var(--mint);
+    }
+
+    .hero-image img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 81%;
+      height: 455px;
+      margin-left: auto;
+      object-fit: cover;
+      filter: saturate(0.76);
+    }
+
+    .image-card {
+      position: absolute;
+      top: 73px;
+      left: 0;
+      z-index: 2;
+      padding: 18px 21px;
+      background: var(--white);
+      box-shadow: 0 14px 30px rgba(34, 48, 40, 0.12);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .image-card strong {
+      display: block;
+      font: 700 14px Manrope, sans-serif;
+    }
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .section-heading {
+      padding-bottom: 29px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading h2,
+    .services-heading h2,
+    .contact-content h2 {
+      max-width: 600px;
+      margin: 0;
+      font: 800 clamp(35px, 4vw, 53px)/1.04 Manrope, sans-serif;
+      letter-spacing: -0.07em;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      padding-top: 57px;
+    }
+
+    .large-copy {
+      max-width: 440px;
+      margin: 0;
+      font: 500 25px/1.45 Manrope, sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    .team-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 18px;
+      margin-bottom: 25px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .team-number {
+      color: #658063;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .team-item h3 {
+      margin: 0 0 7px;
+      font-size: 18px;
+    }
+
+    .team-item p,
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .company-section {
+      padding: 100px 0;
+      background: var(--green);
+      color: #f4f7f1;
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .company-copy {
+      max-width: 520px;
+      color: #d6e1d7;
+      line-height: 1.7;
+    }
+
+    .company-card {
+      padding: 28px;
+      background: #f4f3ed;
+      color: var(--ink);
+    }
+
+    .company-card-title {
+      margin: 0 0 14px;
+      color: #6c856e;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .company-fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 14px 0;
+      border-bottom: 1px solid #dce0d8;
+      font-size: 13px;
+    }
+
+    .company-fact:last-child {
+      border-bottom: 0;
+    }
+
+    .company-fact span {
+      color: #7a827d;
+    }
+
+    .company-fact strong {
+      max-width: 250px;
+      text-align: right;
+    }
+
+    .services-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 46px;
+    }
+
+    .services-heading p {
+      max-width: 235px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+    }
+
+    .service-card {
+      min-height: 285px;
+      padding: 23px;
+      background: #e9eee7;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-number {
+      color: #698266;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .service-card h3 {
+      margin-top: 54px;
+      font-size: 18px;
+    }
+
+    .service-check {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid #d1dbd0;
+      color: #698066;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 100px;
+    }
+
+    .contact-content > p:not(.eyebrow) {
+      max-width: 400px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .contact-detail {
+      margin-top: 29px;
+    }
+
+    .contact-detail strong,
+    .contact-detail span,
+    .contact-detail a {
+      display: block;
+    }
+
+    .contact-detail strong {
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    .contact-detail span,
+    .contact-detail a {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      padding: 34px 37px;
+      background: #e9eee7;
+    }
+
+    .contact-form h3 {
+      margin: 8px 0 22px;
+      font-size: 28px;
+      letter-spacing: -0.06em;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-top: 16px;
+      color: #647169;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      display: block;
+      width: 100%;
+      margin-top: 8px;
+      padding: 13px;
+      border: 1px solid #d4ddd3;
+      outline: 0;
+      background: #fbfaf6;
+      font-size: 13px;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #638061;
+    }
+
+    .contact-form .primary-button {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .contact-form small {
+      display: block;
+      margin-top: 13px;
+      color: #849087;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 44px 0 24px;
+      background: var(--ink);
+      color: #dbe4da;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 25px;
+    }
+
+    .footer-label {
+      display: block;
+      margin-bottom: 7px;
+      color: #829487;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer-grid strong,
+    .footer-grid a {
+      font-size: 12px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid #35453a;
+      color: #87958a;
+      font-size: 10px;
+    }
+
+    .footer-bottom button {
+      border: 0;
+      background: transparent;
+      color: #cedbcf;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        width: min(100% - 40px, 1180px);
+      }
+
+      .navigation {
+        display: none;
+      }
+
+      .hero,
+      .team-grid,
+      .company-grid,
+      .contact-section {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .hero {
+        padding-top: 63px;
+        padding-bottom: 72px;
+      }
+
+      .hero-image {
+        min-height: 370px;
+      }
+
+      .hero-image img {
+        height: 330px;
+      }
+
+      .section {
+        padding: 75px 0 80px;
+      }
+
+      .services-heading {
+        display: block;
+      }
+
+      .services-heading p {
+        margin-top: 18px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid .brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topbar {
+        font-size: 10px;
+      }
+
+      .topbar a {
+        display: block;
+        margin: 5px 0 0;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-facts {
+        gap: 17px;
+      }
+
+      .hero-facts strong {
+        font-size: 18px;
+      }
+
+      .hero-image img {
+        width: 83%;
+        height: 300px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 25px 19px;
+      }
+
+      .footer-bottom {
+        display: block;
+        line-height: 1.8;
+      }
+
+      .footer-bottom button {
+        margin-top: 8px;
+        padding: 0;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Leonel Acadêmica</h1>
-  <p>Livraria, Papelaria e Suprimentos de Informática</p>
-</header>
+  <div class="topbar">
+    Atendimento institucional da Leonel Acadêmica
 
-<!-- SERVIÇOS NO TOPO -->
-<div class="services">
-  <div class="service-box">📚 Comércio varejista de livros</div>
-  <div class="service-box">🖨️ Fotocópias</div>
-  <div class="service-box">💻 Suprimentos de informática</div>
-  <div class="service-box">✏️ Artigos de papelaria</div>
-</div>
-
-<div class="container">
-  <div class="card">
-    <h2>Sobre a Empresa</h2>
-    <p>Leonel Acadêmica Marinho LTDA é uma microempresa ativa desde 12/01/2009, oferecendo soluções completas em livros, papelaria e informática em Teresina - PI.</p>
+    <a
+      href="https://wa.me/5586988680800"
+      target="_blank"
+      rel="noopener"
+    >
+      Falar com a equipe ↗
+    </a>
   </div>
 
-  <div class="card">
-    <h2>Informações Corporativas</h2>
-    <p><strong>CNPJ:</strong> 10.575.935/0001-50</p>
-    <p><strong>Razão Social:</strong> Marinho Livraria Papelaria e Suprimentos de Informatica LTDA</p>
-    <p><strong>Data de Abertura:</strong> 12/01/2009</p>
-    <p><strong>Capital Social:</strong> R$ 60.000,00</p>
-    <p><strong>Opção Simples:</strong> Sim</p>
-  </div>
+  <header class="header container">
+    <a class="brand" href="#inicio">
+      <span class="brand-mark">LA</span>
 
-  <div class="card">
-    <h2>Localização</h2>
-    <p>Avenida Ininga, 1201, Loja V 101</p>
-    <p>Bairro Joquei, Teresina - PI</p>
-    <p>CEP: 64048-110</p>
-  </div>
+      <span>
+        <strong>Leonel Acadêmica</strong>
+        <small>livraria e papelaria</small>
+      </span>
+    </a>
 
-  <div class="card">
-    <h2>Contatos</h2>
-    <p><strong>Telefone / WhatsApp:</strong> (86) 98868-0800</p>
-    <p><strong>Telefone Fixo:</strong> (86) 3221-1137</p>
-    <p><strong>E-mail:</strong> djacicosta@ig.com.br</p>
-  </div>
+    <nav class="navigation">
+      <a href="#equipe">Equipe</a>
+      <a href="#empresa">A empresa</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
 
-  <div class="cta">
-    <button onclick="window.location.href='https://wa.me/5586988680800'">Falar no WhatsApp Agora</button>
-  </div>
-</div>
+      <a
+        class="navigation-button"
+        href="https://wa.me/5586988680800"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp ↗
+      </a>
+    </nav>
+  </header>
 
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5586988680800" target="_blank">💬 WhatsApp</a>
+  <main>
 
-<footer>
-  © 2026 Leonel Acadêmica - Todos os direitos reservados
-</footer>
+    <section class="hero container" id="inicio">
+      <div>
+        <p class="eyebrow">
+          Leonel Acadêmica
+        </p>
+
+        <h1>
+          Conhecimento, rotina e
+          <em>organização</em>
+          para cada dia.
+        </h1>
+
+        <p class="hero-description">
+          Conheça a empresa, sua equipe e as áreas de atuação da Leonel Acadêmica
+          em Teresina — PI.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#equipe">
+            Conheça nossa equipe ↗
+          </a>
+
+          <a class="secondary-link" href="#empresa">
+            Sobre a empresa ↓
+          </a>
+        </div>
+
+        <div class="hero-facts">
+          <div>
+            <strong>2009</strong>
+            <span>Data de abertura</span>
+          </div>
+
+          <div>
+            <strong>PI</strong>
+            <span>Sede em Teresina</span>
+          </div>
+
+          <div>
+            <strong>Ativa</strong>
+            <span>Situação cadastral</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=82"
+          alt="Interior de uma biblioteca com livros"
+        >
+
+        <div class="image-card">
+          Informação para
+          <strong>o cotidiano</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="equipe">
+      <div class="section-heading">
+        <p class="eyebrow">
+          Nossa equipe
+        </p>
+
+        <h2>
+          Pessoas presentes na rotina da empresa.
+        </h2>
+      </div>
+
+      <div class="team-grid">
+        <p class="large-copy">
+          A equipe da Leonel Acadêmica participa do atendimento, da organização
+          dos produtos e das atividades que fazem parte da rotina da empresa.
+        </p>
+
+        <div>
+
+          <div class="team-item">
+            <span class="team-number">01</span>
+
+            <div>
+              <h3>Atendimento próximo</h3>
+              <p>
+                Informações objetivas para orientar cada solicitação.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-item">
+            <span class="team-number">02</span>
+
+            <div>
+              <h3>Ambiente organizado</h3>
+              <p>
+                Livros, papelaria e materiais reunidos para diferentes necessidades.
+              </p>
+            </div>
+          </div>
+
+          <div class="team-item">
+            <span class="team-number">03</span>
+
+            <div>
+              <h3>Canais oficiais</h3>
+              <p>
+                Contato por telefone, WhatsApp e e-mail informados no site da empresa.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="company-section" id="empresa">
+      <div class="container company-grid">
+        <div>
+          <p class="eyebrow" style="color:#c8d8c0">
+            A empresa
+          </p>
+
+          <h2>
+            Uma apresentação clara, com informações verificáveis.
+          </h2>
+
+          <p class="company-copy">
+            A Marinho Livraria Papelaria e Suprimentos de Informatica LTDA,
+            apresentada como Leonel Acadêmica nos canais do site, está localizada
+            em Teresina — PI. A empresa reúne atividades relacionadas a livros,
+            papelaria, fotocópias e suprimentos de informática.
+          </p>
+        </div>
+
+        <div class="company-card">
+          <p class="company-card-title">
+            Dados institucionais
+          </p>
+
+          <div class="company-fact">
+            <span>Razão social</span>
+            <strong>
+              Marinho Livraria Papelaria e Suprimentos de Informatica LTDA
+            </strong>
+          </div>
+
+          <div class="company-fact">
+            <span>CNPJ</span>
+            <strong>10.575.935/0001-50</strong>
+          </div>
+
+          <div class="company-fact">
+            <span>Abertura</span>
+            <strong>12/01/2009</strong>
+          </div>
+
+          <div class="company-fact">
+            <span>Capital social</span>
+            <strong>R$ 60.000,00</strong>
+          </div>
+
+          <div class="company-fact">
+            <span>Opção Simples</span>
+            <strong>Sim</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="servicos">
+      <div class="services-heading">
+        <div>
+          <p class="eyebrow">
+            Áreas de atuação
+          </p>
+
+          <h2>
+            Serviços ligados ao dia a dia.
+          </h2>
+        </div>
+
+        <p>
+          Conheça as atividades apresentadas nos canais institucionais da empresa.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <span class="service-number">01</span>
+
+          <h3>Comércio varejista de livros</h3>
+
+          <p>
+            Livros para diferentes momentos de estudo, leitura e consulta.
+          </p>
+
+          <span class="service-check">
+            ✓ Informação institucional
+          </span>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">02</span>
+
+          <h3>Fotocópias</h3>
+
+          <p>
+            Serviço de cópias para demandas de estudo, trabalho e organização.
+          </p>
+
+          <span class="service-check">
+            ✓ Informação institucional
+          </span>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">03</span>
+
+          <h3>Suprimentos de informática</h3>
+
+          <p>
+            Materiais relacionados ao apoio das atividades de informática.
+          </p>
+
+          <span class="service-check">
+            ✓ Informação institucional
+          </span>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">04</span>
+
+          <h3>Artigos de papelaria</h3>
+
+          <p>
+            Produtos de papelaria para rotinas escolares, pessoais e profissionais.
+          </p>
+
+          <span class="service-check">
+            ✓ Informação institucional
+          </span>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section container contact-section" id="contato">
+      <div class="contact-content">
+        <p class="eyebrow">
+          Canais oficiais
+        </p>
+
+        <h2>
+          Vamos conversar?
+        </h2>
+
+        <p>
+          Envie uma mensagem com sua dúvida. Ao concluir, o WhatsApp oficial
+          será aberto para continuar o contato.
+        </p>
+
+        <div class="contact-detail">
+          <strong>Endereço</strong>
+
+          <span>
+            Avenida Ininga, 1201, Loja V 101<br>
+            Bairro Jóquei, Teresina — PI<br>
+            CEP: 64048-110
+          </span>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Telefone / WhatsApp</strong>
+
+          <a
+            href="https://wa.me/5586988680800"
+            target="_blank"
+            rel="noopener"
+          >
+            (86) 98868-0800
+          </a>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Telefone fixo</strong>
+
+          <span>
+            (86) 3221-1137
+          </span>
+        </div>
+
+        <div class="contact-detail">
+          <strong>E-mail</strong>
+
+          <a href="mailto:djacicosta@ig.com.br">
+            djacicosta@ig.com.br
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <p class="eyebrow">
+          Contato
+        </p>
+
+        <h3>
+          Deixe sua mensagem
+        </h3>
+
+        <label>
+          Nome
+
+          <input
+            id="nome"
+            type="text"
+            required
+            placeholder="Como podemos chamar você?"
+          >
+        </label>
+
+        <label>
+          E-mail
+
+          <input
+            id="email"
+            type="email"
+            required
+            placeholder="voce@empresa.com"
+          >
+        </label>
+
+        <label>
+          Mensagem
+
+          <textarea
+            id="mensagem"
+            rows="4"
+            required
+            placeholder="Escreva brevemente como podemos ajudar"
+          ></textarea>
+        </label>
+
+        <button class="primary-button" type="submit">
+          Preparar mensagem ↗
+        </button>
+
+        <small>
+          Seus dados serão usados apenas para responder ao contato iniciado por você.
+        </small>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+
+      <div class="brand">
+        <span
+          class="brand-mark"
+          style="background:#d5e1cf;color:#17251f"
+        >
+          LA
+        </span>
+
+        <span>
+          <strong>Leonel Acadêmica</strong>
+          <small>Marinho Livraria Papelaria e Suprimentos</small>
+        </span>
+      </div>
+
+      <div>
+        <span class="footer-label">CNPJ</span>
+        <strong>10.575.935/0001-50</strong>
+      </div>
+
+      <div>
+        <span class="footer-label">Localização</span>
+        <strong>Teresina — PI</strong>
+      </div>
+
+      <div>
+        <span class="footer-label">Contato</span>
+        <a href="https://wa.me/5586988680800">
+          (86) 98868-0800
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>
+        © 2026 Leonel Acadêmica. Todos os direitos reservados.
+      </span>
+
+      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        Voltar ao topo ↑
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const mensagem = document.getElementById("mensagem").value;
+
+        const texto =
+          "Olá, meu nome é " +
+          nome +
+          ". E-mail: " +
+          email +
+          ". Mensagem: " +
+          mensagem;
+
+        window.open(
+          "https://wa.me/5586988680800?text=" +
+          encodeURIComponent(texto),
+          "_blank",
+          "noopener"
+        );
+      });
+  </script>
 
 </body>
 </html>
